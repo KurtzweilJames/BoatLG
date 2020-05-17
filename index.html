@@ -1,19 +1,26 @@
-<?php
-include "api.php";
-$i = "/assets/limits/".$l.".svg"; 
-?>
+<!DOCTYPE html>
+
 <html>
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <title>Geneva Lake Boating Guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Font (Lobster) -->
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="main.css">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <!-- Sunset/Sunrise -->
+    <script type='text/javascript' src='/assets/js/sun.js'></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127164289-1"></script>
@@ -25,7 +32,7 @@ $i = "/assets/limits/".$l.".svg";
         }
         gtag('js', new Date());
 
-        gtag('config', 'UA-#########-1');
+        gtag('config', 'UA-127164289-1');
 
     </script>
 
@@ -63,22 +70,16 @@ $i = "/assets/limits/".$l.".svg";
     <div class="lg-header">
         <div class="speed-limit">
             <h3 class="text-light text-center">Current Speed Limit</h3>
-            <img src="<?php echo $i?>" height="200">
+            <img src="" id="sl-sign" height="200">
         </div>
     </div>
 
     <!-- Information -->
     <div class="container">
         <h1 class="lgfont text-center" style="font-size:56px">Geneva Lake Boating Guide</h1>
-        <?php
-    if ($a == null) {
-    } else {
-    echo "<div class='alert alert-info text-center' role='alert'>";
-    echo $a;
-    echo "</div>"; }
-        ?>
+
     </div>
-    <!-- Speed Limits NEW -->
+    <!-- Speed Limits-->
     <div class="container">
         <h1 id="speed" class="lgfont">Speed Limits</h1>
         <div class="table-responsive">
@@ -301,48 +302,12 @@ $i = "/assets/limits/".$l.".svg";
         </div>
     </div>
 
-    <!-- Emergencies -->
-    <!--<div class="container">
-        <h1 id="emergencies" class="lgfont">Boating Emergencies</h1>
-        <div class="row">
-            <div class="col">
-                <div class="card">
-                    <div class="card-header">
-                        Swamping/Capsizing
-                    </div>
-                    <div class="card-body">
-                        <ol>
-                            <li>Put on a life jacket</li>
-                            <li>Run pumps in the boat and try to remove water</li>
-                            <li>If overweight, remove load</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-header">
-                        Swamping/Capsizing
-                    </div>
-                    <div class="card-body">
-                        <ol>
-                            <li>Put on a life jacket</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
     <!-- Weather -->
     <div class="container">
         <h1 id="weather" class="lgfont">Weather</h1>
-        <ul class="list-group">
-            <li class="list-group-item">Current Speed Limit:
-                <?php echo $l; ?> mph
-            </li>
-        </ul>
         <script type='text/javascript' src='https://darksky.net/widget/default/42.5684,-88.4808/us12/en.js?width=100%&height=350&title=Geneva Lake&textColor=212529&bgColor=transparent&transparency=true&skyColor=undefined&fontFamily=Default&customFont=&units=us&htColor=212529&ltColor=C7C7C7&displaySum=yes&displayHeader=yes'></script>
     </div>
+
     <!-- Footer -->
     <footer class="lg-footer">
         <p>Created by <a href="https://jameskurtzweil.com">James Kurtzweil 2020</a></p>
@@ -355,6 +320,72 @@ $i = "/assets/limits/".$l.".svg";
         </p>
         <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="/assets/88x31.png" /></a>
     </footer>
+
+    <script>
+        var d = new Date();
+        var h = d.getHours(); // Hour of Day
+        var day = d.getDay(); // Day of Week
+        var date = d.getDate(); // Day of Month
+        var m = d.getMonth(); // Month
+
+        //Sunset & Sunrise
+        var rise = d.sunrise(42.56522, -88.50311);
+        var set = d.sunset(42.56522, -88.50311);
+
+        var rise = rise.getHours();
+        var set = set.getHours();
+
+        //Holidays
+        if (date == 25 && m == 4) { // Memorial Day 2020
+            holiday = 1;
+        } else if (date == 3 && m == 6) { //July 3
+            holiday = 1;
+        } else if (date == 4 && m == 6) { //July 4
+            holiday = 1;
+        } else if (date == 5 && m == 6) { //July 5
+            holiday = 1;
+        } else if (date == 7 && m == 8) { // Labor Day 2020
+            holiday = 1;
+        } else {
+            holiday = 0;
+        }
+
+        if (h > set) { // After Sunset
+            speed = 15;
+        } else if (h < rise) { // Before Sunrise
+            speed = 15;
+        } else if (holiday == 1) { // Holidays
+            speed = 35;
+        } else if (day == 6 || day == 0) { // Weekend
+            speed = 35;
+        } else if (day == 5 && h < 12) { // Friday before 12
+            speed = 45;
+        } else if (day == 5 && h >= 12) { // Friday after 12
+            speed = 35;
+        } else {
+            speed = 45;
+        }
+
+
+        if (speed == 15) {
+            document.getElementById("sl-sign").src = "/assets/limits/15.svg";
+        } else if (speed == 35) {
+            document.getElementById("sl-sign").src = "/assets/limits/35.svg";
+        } else if (speed == 45) {
+            document.getElementById("sl-sign").src = "/assets/limits/45.svg";
+        }
+
+        console.log("Current Speed Limit: " + speed + "mph");
+        console.log("Current Hour: " + h);
+        console.log("Sunrise Hour: " + rise);
+        console.log("Sunset Hour: " + set);
+
+    </script>
+
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
 
 </html>
