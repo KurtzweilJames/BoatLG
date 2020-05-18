@@ -1,5 +1,5 @@
-# Geneva-Lake-Boating-Guide
-Boating Guide Website for Lake Geneva, WI
+# BoatLG
+Resources for boating on Geneva Lake, Wisconsin.
 
 ## Credits
 "Lake Geneva, Wisconsin" by atramos is licensed under CC BY 2.0
