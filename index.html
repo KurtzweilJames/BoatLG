@@ -54,14 +54,13 @@
     <nav class="site-header sticky-top py-1">
         <div class="container d-flex flex-column flex-md-row justify-content-between">
             <a class="py-2" href="#">
-                <img src="/assets/geneva.svg" height="26">
+                <img src="/assets/geneva.svg" height="26" alt="BoatLG">
             </a>
             <a class="py-2 d-none d-md-inline-block" href="#speed">Speed Limits</a>
             <a class="py-2 d-none d-md-inline-block" href="#age">Age Limits</a>
             <a class="py-2 d-none d-md-inline-block" href="#contacts">Contacts</a>
             <a class="py-2 d-none d-md-inline-block" href="#buoys">Buoys</a>
             <a class="py-2 d-none d-md-inline-block" href="#swimming">Swimming</a>
-            <a class="py-2 d-none d-md-inline-block" href="#emergencies">Emergencies</a>
             <a class="py-2 d-none d-md-inline-block" href="#weather">Weather</a>
         </div>
     </nav>
@@ -70,7 +69,7 @@
     <div class="lg-header">
         <div class="speed-limit">
             <h3 class="text-light text-center">Current Speed Limit</h3>
-            <img src="" id="sl-sign" height="200">
+            <img src="" id="sl-sign" alt="" height="200">
         </div>
     </div>
 
@@ -223,7 +222,7 @@
         <div class="row">
             <div class="col">
                 <div class="card text-center">
-                    <img class="card-img-top" src="/assets/buoys/Controlled.svg">
+                    <img class="card-img-top" src="/assets/buoys/Controlled.svg" alt="Controlled Buoy">
                     <h5 class="card-header">Controlled Area</h5>
                     <p class="card-text"><b>Laws</b></p>
                     <ul class="list-group list-group-flush">
@@ -235,7 +234,7 @@
             </div>
             <div class="col">
                 <div class="card text-center">
-                    <img class="card-img-top" src="/assets/buoys/Information.svg">
+                    <img class="card-img-top" src="/assets/buoys/Information.svg" alt="Information Buoy">
                     <h5 class="card-header">Information</h5>
                     <p class="card-text"><b>Directions and Information</b></p>
                     <ul class="list-group list-group-flush">
@@ -247,7 +246,7 @@
             </div>
             <div class="col">
                 <div class="card text-center">
-                    <img class="card-img-top" src="/assets/buoys/Keep Out.svg">
+                    <img class="card-img-top" src="/assets/buoys/Keep Out.svg" alt="Keep Out Buoy">
                     <h5 class="card-header">Keep Out</h5>
                     <p class="card-text"><b>Do Not Enter</b></p>
                     <ul class="list-group list-group-flush">
@@ -259,7 +258,7 @@
             </div>
             <div class="col">
                 <div class="card text-center">
-                    <img class="card-img-top" src="/assets/buoys/Warning.svg">
+                    <img class="card-img-top" src="/assets/buoys/Warning.svg" alt="Warning Buoy">
                     <h5 class="card-header">Warning</h5>
                     <p class="card-text"><b>The marked area requires caution.</b></p>
                     <ul class="list-group list-group-flush">
@@ -315,10 +314,13 @@
             The information provided on this page is provided for educational purposes only. Please do not use this information for legal information. Use the resources below for official information.
         </p>
         <p>
-            <a href="http://www.genevalakepolice.com/resource-doc/LAKE%20ORD%20Flyer%202018.pdf">Geneva Lake Ordinances</a> ///
-            <a href="https://dnr.wi.gov/files/pdf/pubs/le/le0301.pdf">Wisconsin DNR</a>
+            <a href="http://www.genevalakepolice.com/resource-doc/LAKE%20ORD%20Flyer%202018.pdf" target="_blank">Geneva Lake Ordinances</a> ///
+            <a href="https://dnr.wi.gov/files/pdf/pubs/le/le0301.pdf" target="_blank">Wisconsin DNR</a>
         </p>
-        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="/assets/88x31.png" /></a>
+        <p class="text-center">
+            <a href="https://github.com/KurtzweilJames/BoatLG"><i class="fab fa-github"></i></a>
+        </p>
+
     </footer>
 
     <script>
@@ -350,9 +352,9 @@
             holiday = 0;
         }
 
-        if (h > set) { // After Sunset
+        if (h >= set) { // After Sunset
             speed = 15;
-        } else if (h < rise) { // Before Sunrise
+        } else if (h <= rise) { // Before Sunrise
             speed = 15;
         } else if (holiday == 1) { // Holidays
             speed = 35;
@@ -369,10 +371,13 @@
 
         if (speed == 15) {
             document.getElementById("sl-sign").src = "/assets/limits/15.svg";
+            document.getElementById("sl-sign").alt = "15mph";
         } else if (speed == 35) {
             document.getElementById("sl-sign").src = "/assets/limits/35.svg";
+            document.getElementById("sl-sign").alt = "35mph";
         } else if (speed == 45) {
             document.getElementById("sl-sign").src = "/assets/limits/45.svg";
+            document.getElementById("sl-sign").alt = "45mph";
         }
 
         console.log("Current Speed Limit: " + speed + "mph");
