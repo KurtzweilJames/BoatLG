@@ -35,7 +35,7 @@
 }
 
 .speed-limit-desktop {
-    background-color: #007bff;
+    background-color: #1C5D99;
     position: relative;
     top: 120px;
     margin-left: calc(100% - 190px);
@@ -43,7 +43,7 @@
 }
 
 .speed-limit-mobile {
-    background-color: #007bff;
+    background-color: #1C5D99;
     position: relative;
     color: white;
     width: 100%;
@@ -51,6 +51,11 @@
     text-align: center
 }
 
+.btn-primary {
+    color: #fff;
+    background-color: #1C5D99;
+    border-color: #1C5D99;
+}
 
 @media screen and (max-width: 600px) {
     .glmap {

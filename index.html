@@ -10,11 +10,11 @@
     <!-- Font (Lobster) -->
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="main.css">
-
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="main.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -45,9 +45,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
     <link rel="manifest" href="/assets/icons/site.webmanifest">
-    <link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#3c8aff">
+    <link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#1c5d99">
     <link rel="shortcut icon" href="/assets/icons/favicon.ico">
-    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-TileColor" content="#1c5d99">
     <meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
@@ -58,7 +58,7 @@
     <nav class="site-header sticky-top py-1">
         <div class="container d-flex flex-column flex-md-row justify-content-between">
             <a class="py-2" href="#">
-                <img src="/assets/geneva.svg" height="26" alt="BoatLG">
+                <img id="geneva" src="/assets/geneva.svg" height="26" alt="BoatLG">
             </a>
             <a class="py-2 d-none d-md-inline-block" href="#speed">Speed Limits</a>
             <a class="py-2 d-none d-md-inline-block" href="#age">Age Limits</a>
@@ -70,9 +70,9 @@
     </nav>
 
     <!-- Header -->
-    <div class="lg-header">
-        <div class="speed-limit-mobile d-inline-block d-md-none">
-            <h3 id="textspeed">Current Speed Limit:</h3>
+    <div id="lg-header" class="lg-header">
+        <div id="mobile-speed" class="speed-limit-mobile d-inline-block d-md-none" style="">
+            <h3 id="textspeed">Current Speed Limit: --mph</h3>
         </div>
         <div class="speed-limit-desktop d-none d-md-inline-block">
             <h3 class="text-light text-center">Current Speed Limit</h3>
@@ -83,6 +83,7 @@
 
     <!-- Information -->
     <div class="container">
+        <div id="message"></div>
         <h1 class="sectionhead text-center" style="font-size:56px">Geneva Lake Boating Guide</h1>
 
     </div>
@@ -368,16 +369,12 @@
         var set = set.getHours();
 
         //Holidays
-        if (date == 25 && m == 4) { // Memorial Day 2020
-            holiday = 1;
-        } else if (date == 3 && m == 6) { //July 3
-            holiday = 1;
-        } else if (date == 4 && m == 6) { //July 4
-            holiday = 1;
-        } else if (date == 5 && m == 6) { //July 5
-            holiday = 1;
-        } else if (date == 7 && m == 8) { // Labor Day 2020
-            holiday = 1;
+        if ((date == 25 || date == 24 || date == 23) && m == 4) { // Memorial Day 2020
+            holiday = "Memorial Day Weekend";
+        } else if ((date == 3 || date == 4 || date == 5) && m == 6) { // Independence Day
+            holiday = "Independence Day";
+        } else if ((date == 5 || date == 6 || date == 7) && m == 8) { // Labor Day 2020
+            holiday = "Labor Day Weekend";
         } else {
             holiday = 0;
         }
@@ -390,7 +387,7 @@
             speed = 15;
             reason = "Before Sunrise";
             until = "Until " + (rise + 1) + "am";
-        } else if (holiday == 1) { // Holidays
+        } else if (holiday !== 0) { // Holidays
             speed = 35;
             reason = "Holiday";
             until = "Until " + (set - 12) + "pm";
@@ -431,6 +428,19 @@
         console.log("Current Hour: " + h);
         console.log("Sunrise Hour: " + rise);
         console.log("Sunset Hour: " + set);
+
+        message = 0;
+
+        //Holiday Logos
+        if (holiday !== 0) {
+            document.getElementById("geneva").src = "/assets/geneva_am.svg";
+            document.getElementById("lg-header").style.backgroundImage = "url(/assets/header/1.jpg)";
+            message = "Happy " + holiday + "! As a friendly reminder, the daytime holiday speed limit is <b>35mph</b>. Boat safe!";
+        }
+
+        if (message !== 0) {
+            document.getElementById("message").innerHTML = "<div class='alert alert-primary text-center' role='alert'>" + message + "</div>";
+        }
 
     </script>
 
