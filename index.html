@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Geneva Lake Boating Guide</title>
+    <title>BoatLG</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Font (Lobster) -->
@@ -21,6 +21,10 @@
 
     <!-- Sunset/Sunrise -->
     <script type='text/javascript' src='/assets/js/sun.js'></script>
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127164289-1"></script>
@@ -67,20 +71,24 @@
 
     <!-- Header -->
     <div class="lg-header">
-        <div class="speed-limit">
+        <div class="speed-limit-mobile d-inline-block d-md-none">
+            <h3 id="textspeed">Current Speed Limit:</h3>
+        </div>
+        <div class="speed-limit-desktop d-none d-md-inline-block">
             <h3 class="text-light text-center">Current Speed Limit</h3>
             <img src="" id="sl-sign" alt="" height="200">
+            <h5 class="text-light text-center" id="until"></h5>
         </div>
     </div>
 
     <!-- Information -->
     <div class="container">
-        <h1 class="lgfont text-center" style="font-size:56px">Geneva Lake Boating Guide</h1>
+        <h1 class="sectionhead text-center" style="font-size:56px">Geneva Lake Boating Guide</h1>
 
     </div>
     <!-- Speed Limits-->
-    <div class="container">
-        <h1 id="speed" class="lgfont">Speed Limits</h1>
+    <div class="container" id="speed">
+        <h1 class="sectionhead">Speed Limits</h1>
         <div class="table-responsive">
             <table class="table text-center">
                 <thead class="thead-dark">
@@ -143,8 +151,8 @@
     </div>
 
     <!-- Age Limits -->
-    <div class="container">
-        <h1 id="age" class="lgfont">Age Limits</h1>
+    <div class="container" id="age">
+        <h1 class="sectionhead">Age Limits</h1>
         <div class="row">
             <div class="col-sm-6">
                 <div class="card">
@@ -190,8 +198,8 @@
     </div>
 
     <!-- Contacts -->
-    <div class="container">
-        <h1 id="contacts" class="lgfont">Important Contacts</h1>
+    <div class="container" id="contacts">
+        <h1 class="sectionhead">Important Contacts</h1>
         <div class="row">
             <div class="col-sm-6">
                 <div class="card text-center">
@@ -217,8 +225,8 @@
     </div>
 
     <!-- Buoys -->
-    <div class="container">
-        <h1 id="buoys" class="lgfont">Buoys</h1>
+    <div class="container" id="buoys">
+        <h1 class="sectionhead">Buoys</h1>
         <div class="row row-cols-2 row-cols-md-4">
             <div class="col">
                 <div class="card text-center">
@@ -272,8 +280,8 @@
     </div>
 
     <!-- Swimming -->
-    <div class="container">
-        <h1 id="swimming" class="lgfont">Swimming</h1>
+    <div class="container" id="swimming">
+        <h1 class="sectionhead">Swimming</h1>
         <div class="row">
             <div class="col-sm-6">
                 <div class="card">
@@ -302,9 +310,15 @@
     </div>
 
     <!-- Weather -->
-    <div class="container">
-        <h1 id="weather" class="lgfont">Weather</h1>
+    <div class="container" id="weather">
+        <h1 class="sectionhead">Weather</h1>
         <script type='text/javascript' src='https://darksky.net/widget/default/42.5684,-88.4808/us12/en.js?width=100%&height=350&title=Geneva Lake&textColor=212529&bgColor=transparent&transparency=true&skyColor=undefined&fontFamily=Default&customFont=&units=us&htColor=212529&ltColor=C7C7C7&displaySum=yes&displayHeader=yes'></script>
+    </div>
+
+    <!-- Lake Map -->
+    <div class="container" id="lakemap">
+        <h1 class="sectionhead">Map</h1>
+        <div class="glmap" id="glmap"></div>
     </div>
 
     <!-- Footer -->
@@ -322,6 +336,22 @@
         </p>
 
     </footer>
+
+    <script>
+        var mymap = L.map('glmap').setView([42.567, -88.499], 13);
+
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoiamt1cnR6d2VpbDIiLCJhIjoiY2thZDluYnBxMjJmdjJ6bXhyOG81Y213eCJ9.MBSKdq0lNlUe2ngXZt4miA', {
+            maxZoom: 18,
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1,
+        }).addTo(mymap);
+        var marker = L.marker([42.5730731, -88.5388487]).addTo(mymap);
+
+    </script>
 
     <script>
         var d = new Date();
@@ -354,18 +384,32 @@
 
         if (h >= set) { // After Sunset
             speed = 15;
+            reason = "After Sunset";
+            until = "Until " + (rise + 1) + "am";
         } else if (h <= rise) { // Before Sunrise
             speed = 15;
+            reason = "Before Sunrise";
+            until = "Until " + (rise + 1) + "am";
         } else if (holiday == 1) { // Holidays
             speed = 35;
+            reason = "Holiday";
+            until = "Until " + (set - 12) + "pm";
         } else if (day == 6 || day == 0) { // Weekend
             speed = 35;
+            reason = "Weekend";
+            until = "Until " + (set - 12) + "pm";
         } else if (day == 5 && h < 12) { // Friday before 12
             speed = 45;
+            reason = "Weekday";
+            until = "Until " + (set - 12) + "pm";
         } else if (day == 5 && h >= 12) { // Friday after 12
             speed = 35;
+            reason = "Weekend";
+            until = "Until " + (set - 12) + "pm";
         } else {
             speed = 45;
+            reason = "Weekday";
+            until = "Until " + (set - 12) + "pm";
         }
 
 
@@ -380,7 +424,10 @@
             document.getElementById("sl-sign").alt = "45mph";
         }
 
-        console.log("Current Speed Limit: " + speed + "mph");
+        document.getElementById("until").innerHTML = until;
+        document.getElementById("textspeed").innerHTML = "Current Speed Limit: " + speed + "mph";
+
+        console.log("Current Speed Limit: " + speed + "mph because it's " + reason);
         console.log("Current Hour: " + h);
         console.log("Sunrise Hour: " + rise);
         console.log("Sunset Hour: " + set);
