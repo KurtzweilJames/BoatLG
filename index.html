@@ -66,6 +66,7 @@
             <a class="py-2 d-none d-md-inline-block" href="#buoys">Buoys</a>
             <a class="py-2 d-none d-md-inline-block" href="#swimming">Swimming</a>
             <a class="py-2 d-none d-md-inline-block" href="#weather">Weather</a>
+            <a class="py-2 d-none d-md-inline-block" href="#map">Map</a>
         </div>
     </nav>
 
@@ -136,7 +137,7 @@
                         <td class="table-warning">15</td>
                     </tr>
                     <tr>
-                        <th scope="row">Holidays</th>
+                        <th scope="row">Holidays*</th>
                         <td class="table-info">35</td>
                         <td class="table-info">35</td>
                         <td class="table-info">35</td>
@@ -148,7 +149,11 @@
                 </tbody>
             </table>
         </div>
-        <p class="text-center">Holidays include July 3-5, Memorial Day, and Labor Day</p>
+        <p class="text-center">*Holidays include July 3-5, Memorial Day, and Labor Day</p>
+
+        <br>
+
+        <p>When driving inside the "Slow-No-Wake" area marked by buoys, or withing 200 feet of the shoreline, the watercraft must not exceed a speed that produces a wake.</p>
     </div>
 
     <!-- Age Limits -->
@@ -173,7 +178,7 @@
                                 <td><u>Boating</u> license required*</td>
                             </tr>
                         </table>
-                        <p class="text-center">*There is an exception that those born <i>before</i> January 1, 1989 do not need a boating license</p>
+                        <p class="text-center">*Those born <i>before</i> January 1, 1989 do not need a boating license. Anyone younger requires a boating license.</p>
                     </div>
                 </div>
             </div>
@@ -191,7 +196,7 @@
                                 <td><u>Boating</u> license required*</td>
                             </tr>
                         </table>
-                        <p class="text-center">*There is an exception that those born <i>before</i> January 1, 1989 do not need a boating license</p>
+                        <p class="text-center">*Those born <i>before</i> January 1, 1989 do not need a boating license. Anyone younger requires a boating license.</p>
                     </div>
                 </div>
             </div>
@@ -282,21 +287,29 @@
 
     <!-- Swimming -->
     <div class="container" id="swimming">
-        <h1 class="sectionhead">Swimming</h1>
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="card">
+        <h1 class="sectionhead">Swimming/Skiing/Diving</h1>
+        <div class="row row-cols-1 row-cols-md-2">
+            <div class="col">
+                <div class="card mx-4">
                     <div class="card-header">Swimming</div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">ALLOWED when boat is anchored or manned</li>
+                        <li class="list-group-item">Boats must be anchored or idle manned with a competent person</li>
                         <li class="list-group-item">Swimmers must remain within 50 feet of boat</li>
-                        <li class="list-group-item">Swimming in traffic lane only allowed when manned</li>
                         <li class="list-group-item">Swimming is only allowed sunrise to sunset</li>
                     </ul>
                 </div>
             </div>
-            <div class="col-sm-6">
-                <div class="card">
+            <div class="col">
+                <div class="card mx-4">
+                    <div class="card-header">Water Sking</div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">There must be a minimum of two competent persons on the towing watercraft: one driver and one observer</li>
+                        <li class="list-group-item">Those being towed must be wearing a United States Coast Guard approved Personal Floatation Device (PFD)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mx-4">
                     <div class="card-header">SCUBA Diving</div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Divers must register with the Water Saftey Patrol</li>
@@ -317,7 +330,7 @@
     </div>
 
     <!-- Lake Map -->
-    <div class="container" id="lakemap">
+    <div class="container" id="map">
         <h1 class="sectionhead">Map</h1>
         <div class="glmap" id="glmap"></div>
     </div>
@@ -434,7 +447,7 @@
         //Holiday Logos
         if (holiday !== 0) {
             document.getElementById("geneva").src = "/assets/geneva_am.svg";
-            document.getElementById("lg-header").style.backgroundImage = "url(/assets/header/1.jpg)";
+            document.getElementById("lg-header").style.backgroundImage = "url(/assets/header/america.jpg)";
             message = "Happy " + holiday + "! As a friendly reminder, the daytime holiday speed limit is <b>35mph</b>. Boat safe!";
         }
 

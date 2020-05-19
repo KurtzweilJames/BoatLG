@@ -28,7 +28,7 @@
 }
 
 .lg-header {
-    background-image: url(/assets/header/2.jpg);
+    background-image: url(/assets/header/lgcl.jpg);
     background-size: cover;
     background-position: center;
     margin-bottom: 10px;
@@ -36,8 +36,9 @@
 
 .speed-limit-desktop {
     background-color: #1C5D99;
+    opacity: 95%;
     position: relative;
-    top: 120px;
+    top: 100px;
     margin-left: calc(100% - 190px);
     padding: 15px;
 }
@@ -48,7 +49,7 @@
     color: white;
     width: 100%;
     padding: 5px;
-    text-align: center
+    text-align: center;
 }
 
 .btn-primary {
