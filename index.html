@@ -19,6 +19,9 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
+    <!-- Moment -->
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.26.0/moment.min.js"></script>
+
     <!-- Sunset/Sunrise -->
     <script type='text/javascript' src='/assets/js/sun.js'></script>
 
@@ -55,20 +58,44 @@
 
 <body>
     <!-- Navigation -->
-    <nav class="site-header sticky-top py-1">
-        <div class="container d-flex flex-column flex-md-row justify-content-between">
-            <a class="py-2" href="#">
-                <img id="geneva" src="/assets/geneva.svg" height="26" alt="BoatLG">
+    <nav class="navbar sticky-top navbar-expand-lg site-header">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/assets/geneva.svg" id="geneva" height="30" alt="BoatLG">
             </a>
-            <a class="py-2 d-none d-md-inline-block" href="#speed">Speed Limits</a>
-            <a class="py-2 d-none d-md-inline-block" href="#age">Age Limits</a>
-            <a class="py-2 d-none d-md-inline-block" href="#contacts">Contacts</a>
-            <a class="py-2 d-none d-md-inline-block" href="#buoys">Buoys</a>
-            <a class="py-2 d-none d-md-inline-block" href="#swimming">Swimming</a>
-            <a class="py-2 d-none d-md-inline-block" href="#weather">Weather</a>
-            <a class="py-2 d-none d-md-inline-block" href="#map">Map</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#speed">Speed Limits</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#age">Age Limits</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacts">Contacts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#buoys">Buoys</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inwater">In the Water</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#weather">Weather</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#map">Map</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
+
+    <!-- Emergency Alerts -->
+    <div id="weatheralert" class="weatheralert"></div>
 
     <!-- Header -->
     <div id="lg-header" class="lg-header">
@@ -286,8 +313,8 @@
     </div>
 
     <!-- Swimming -->
-    <div class="container" id="swimming">
-        <h1 class="sectionhead">Swimming/Skiing/Diving</h1>
+    <div class="container" id="inwater">
+        <h1 class="sectionhead">In the Water</h1>
         <div class="row row-cols-1 row-cols-md-2">
             <div class="col">
                 <div class="card mx-4">
@@ -350,6 +377,12 @@
         </p>
 
     </footer>
+
+
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
     <script>
         var mymap = L.map('glmap').setView([42.567, -88.499], 13);
@@ -455,12 +488,28 @@
             document.getElementById("message").innerHTML = "<div class='alert alert-primary text-center' role='alert'>" + message + "</div>";
         }
 
+        //Weather Alerts
+        alert = 0;
+
+        if (alert !== 0) {
+            document.getElementById("weatheralert").style.display = "block";
+
+            if (alert == "Lightning") {
+                alert = "Lightning has been detected in the area! Please remain off the lake!";
+            } else if (alert == "Fog") {
+                alert = "Fog has been detected in the area! Please use extreme caution due to the decreased visibility."
+            } else if (alert == "Tornado Watch") {
+                alert = "A Tornado Watch has been issued for the area. Please use extreme caution when out on the water."
+            } else {
+                alert = alert;
+            }
+
+            document.getElementById("weatheralert").innerHTML = alert;
+        }
+
     </script>
 
-    <!-- Bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
