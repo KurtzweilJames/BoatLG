@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>BoatLG</title>
+    <title>Geneva Lake Boating Guide</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Font (Lobster) -->
@@ -40,6 +40,29 @@
         gtag('js', new Date());
 
         gtag('config', 'UA-127164289-1');
+
+    </script>
+
+    <!-- SEO Tags -->
+    <meta name="title" content="Geneva Lake Boating Guide">
+    <meta name="description" content="Resources for boating on Geneva Lake, Wisconsin- the most beautiful lake in the midwest! We help you gain confidence before heading out on the water.">
+    <meta name="keywords" content="genevalake, lakegeneva, boating, Lake Geneva, Geneva Lake, Wisconsin, Walworth County">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="author" content="James Kurtzweil">
+    <meta property="og:title" content="Geneva Lake Boating Guide">
+    <meta property="og:site_name" content="BoatLG">
+    <meta property="og:url" content="https://boatlg.com/">
+    <meta property="og:description" content="Resources for boating on Geneva Lake, Wisconsin- the most beautiful lake in the midwest! We help you gain confidence before heading out on the water.">
+    <meta property="og:type" content="place">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org/",
+            "@type": "WebSite",
+            "name": "Geneva Lake Boating Guide",
+            "url": "https://boatlg.com/"
+        }
 
     </script>
 
@@ -112,7 +135,7 @@
     <!-- Information -->
     <div class="container">
         <div id="message"></div>
-        <h1 class="sectionhead text-center" style="font-size:56px">Geneva Lake Boating Guide</h1>
+        <h1 class="sectionhead text-center title">Geneva Lake Boating Guide</h1>
 
     </div>
     <!-- Speed Limits-->
@@ -498,6 +521,8 @@
                 alert = "Lightning has been detected in the area! Please remain off the lake!";
             } else if (alert == "Fog") {
                 alert = "Fog has been detected in the area! Please use extreme caution due to the decreased visibility."
+            } else if (alert == "Thunderstorm Warning") {
+                alert = "A Thunderstorm Warning has been issued for the area. Please use extreme caution when out on the water."
             } else if (alert == "Tornado Watch") {
                 alert = "A Tornado Watch has been issued for the area. Please use extreme caution when out on the water."
             } else {

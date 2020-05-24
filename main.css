@@ -31,6 +31,10 @@
 
 }
 
+.title {
+    font-size: 56px;
+}
+
 .lg-header {
     background-image: url(/assets/header/lgcl.jpg);
     background-size: cover;
