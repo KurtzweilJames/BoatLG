@@ -42,11 +42,20 @@
     margin-bottom: 10px;
 }
 
+.lg-header-title {
+    color: #c52925;
+    font-family: "Lobster", Sans-serif;
+    font-size: 72px;
+    text-shadow: 4px 4px 0px #ffffff;
+    text-align: center;
+    display: flex;
+}
+
 .speed-limit-desktop {
     background-color: #1C5D99;
     opacity: 95%;
     position: relative;
-    top: 100px;
+    top: 85px;
     margin-left: calc(100% - 190px);
     padding: 15px;
 }
