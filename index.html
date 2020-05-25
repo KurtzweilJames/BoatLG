@@ -505,11 +505,24 @@
             message = "Happy " + holiday + "! As a friendly reminder, the daytime holiday speed limit is <b>35mph</b>. Boat safe!";
         }
 
+
         if (message !== 0) {
             document.getElementById("message").innerHTML = "<div class='alert alert-primary text-center' role='alert'>" + message + "</div>";
         }
 
-        //Weather Alerts
+        //Random Header
+        if (holiday == 0) {
+            img = Math.floor(Math.random() * 3) + 1;
+            if (img == 1) {
+                document.getElementById("lg-header").style.backgroundImage = "url(/assets/header/lgcl.jpg)";
+            } else if (img == 2) {
+                document.getElementById("lg-header").style.backgroundImage = "url(/assets/header/lake1.jpg)";
+            } else if (img == 3) {
+                document.getElementById("lg-header").style.backgroundImage = "url(/assets/header/cedarpoint.jpg)";
+            }
+        }
+
+        //Weather Alerts (NOT ACTIVE - IN DEVELOPMENT)
         alert = 0;
 
         if (alert !== 0) {
