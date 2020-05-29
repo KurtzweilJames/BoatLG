@@ -118,3 +118,37 @@
     background-color: #f9f9f9;
     border-top: .05rem solid #e5e5e5;
 }
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212 !important;
+        color: #eee;
+    }
+    
+    .table th {
+        color: #eee;
+    }
+    
+    .table {
+        background-color: #212121;
+    }
+    
+    .card {
+        background-color: #212121;
+    }
+    
+    .bw {
+        background-color: #212121;
+        color: #eee;
+    }
+    
+    .list-group-item {
+        background-color: #212121;
+        color: #eee;
+    }
+    
+    .lg-footer {
+        background-color: #212121;
+        color: #eee;
+    }
+}
