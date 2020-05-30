@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="100%" height="100%" viewBox="0 0 300 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:1.5;">
-    <g transform="matrix(1.09895,0.219151,-0.219151,1.09895,150,250)">
-        <g id="Controlled" transform="matrix(1,0,0,1,-100,-183)">
+    <g transform="matrix(1.29358,-0.121629,0.121629,1.29358,151.579,248.499)">
+        <g id="Hazard" transform="matrix(1,0,0,1,-100,-182.7)">
             <clipPath id="_clip1">
-                <rect x="0" y="0" width="200" height="366"/>
+                <rect x="0" y="0" width="200" height="365.4"/>
             </clipPath>
             <g clip-path="url(#_clip1)">
                 <g id="Buoy" transform="matrix(0.930366,0,0,0.930366,-39.4922,-59.2318)">
@@ -19,10 +19,12 @@
                         <path d="M42.448,113.119L42.449,113.156C42.64,119.451 90.677,124.555 149.818,124.555C209.077,124.555 257.187,119.431 257.187,113.119L257.187,136.119C257.187,142.431 209.077,147.555 149.818,147.555C90.559,147.555 42.448,142.431 42.448,136.119L42.448,113.119Z" style="fill:rgb(255,66,84);"/>
                     </g>
                 </g>
-                <circle cx="100.063" cy="188.028" r="87.296" style="fill:rgb(223,223,223);fill-opacity:0;stroke:rgb(255,66,84);stroke-width:10.42px;"/>
+                <g transform="matrix(0.721254,0.721845,-0.721845,0.721254,163.753,-107.62)">
+                    <rect x="100.11" y="188.447" width="121.22" height="121.22" style="fill:none;stroke:rgb(255,66,84);stroke-width:10.21px;"/>
+                </g>
             </g>
         </g>
-        <g id="Controlled1" serif:id="Controlled">
+        <g id="Hazard1" serif:id="Hazard">
         </g>
     </g>
 </svg>

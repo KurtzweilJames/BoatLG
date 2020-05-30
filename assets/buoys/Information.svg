@@ -1,76 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   id="svg1923"
-   sodipodi:version="0.32"
-   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-   width="317.40582"
-   height="591.34485"
-   version="1.0"
-   sodipodi:docname="Information.svg">
-  <metadata
-     id="metadata1928">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <defs
-     id="defs1926" />
-  <sodipodi:namedview
-     inkscape:window-height="744"
-     inkscape:window-width="1108"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
-     guidetolerance="10.0"
-     gridtolerance="10.0"
-     objecttolerance="10.0"
-     borderopacity="1.0"
-     bordercolor="#666666"
-     pagecolor="#ffffff"
-     id="base"
-     inkscape:zoom="0.98562091"
-     inkscape:cx="-330.70482"
-     inkscape:cy="260.19703"
-     inkscape:window-x="2062"
-     inkscape:window-y="186"
-     inkscape:current-layer="svg1923"
-     showgrid="false" />
-  <path
-     style="fill:none;stroke:#ff7900;stroke-width:22;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="M 4.4857113,117.10438 H 316.97908"
-     id="path850"
-     inkscape:connector-curvature="0" />
-  <path
-     style="fill:none;stroke:#ff7900;stroke-width:22;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="M 1.4419446,412.34974 H 313.93532"
-     id="path850-1"
-     inkscape:connector-curvature="0" />
-  <rect
-     style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ff7900;stroke-width:10.12635326;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     id="rect865"
-     width="193.4877"
-     height="193.4877"
-     x="61.850353"
-     y="165.95403" />
-  <rect
-     style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:11;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     id="rect895"
-     width="306.40582"
-     height="580.34485"
-     x="5.5"
-     y="5.5" />
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 300 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1.25836,-0.0397351,0.0397351,1.25836,150,250)">
+        <g id="Information" transform="matrix(1,0,0,1,-100,-182.7)">
+            <g id="Buoy" transform="matrix(0.930366,0,0,0.930366,-39.4922,-59.2318)">
+                <path d="M257.187,444.978C257.187,451.29 209.077,456.414 149.818,456.414C90.559,456.414 42.448,451.29 42.448,444.978L42.448,75.119L42.449,75.156C42.64,81.451 90.677,86.555 149.818,86.555C209.077,86.555 257.187,81.431 257.187,75.119L257.187,444.978Z" style="fill:rgb(235,235,235);"/>
+                <g transform="matrix(1,0,0,1,-20.9657,-50.8259)">
+                    <ellipse cx="170.783" cy="125.945" rx="107.37" ry="11.436" style="fill:rgb(223,223,223);"/>
+                </g>
+                <g transform="matrix(1,0,0,1.45341,0,-59.408)">
+                    <path d="M42.448,113.119L42.449,113.156C42.64,119.451 90.677,124.555 149.818,124.555C209.077,124.555 257.187,119.431 257.187,113.119L257.187,136.119C257.187,142.431 209.077,147.555 149.818,147.555C90.559,147.555 42.448,142.431 42.448,136.119L42.448,113.119Z" style="fill:rgb(255,66,84);"/>
+                </g>
+                <g transform="matrix(1,0,0,1.45341,0.182295,203.458)">
+                    <path d="M42.448,113.119L42.449,113.156C42.64,119.451 90.677,124.555 149.818,124.555C209.077,124.555 257.187,119.431 257.187,113.119L257.187,136.119C257.187,142.431 209.077,147.555 149.818,147.555C90.559,147.555 42.448,142.431 42.448,136.119L42.448,113.119Z" style="fill:rgb(255,66,84);"/>
+                </g>
+            </g>
+            <g transform="matrix(1.02043,0,0,1.02043,-64.1097,-71.4349)">
+                <rect x="100.11" y="188.447" width="121.22" height="121.22" style="fill:none;stroke:rgb(255,66,84);stroke-width:10.21px;"/>
+            </g>
+        </g>
+        <g id="Information1" serif:id="Information">
+        </g>
+    </g>
 </svg>
