@@ -278,9 +278,9 @@
         <div class="row row-cols-2 row-cols-md-4">
             <div class="col">
                 <div class="card text-center">
-                    <img class="card-img-top" src="/assets/buoys/Controlled.svg" alt="Controlled Buoy">
+                    <img class="card-img-top" src="/assets/buoys/3.0/Controlled.svg" alt="Controlled Buoy">
                     <h5 class="card-header">Controlled Area</h5>
-                    <p class="card-text"><b>Laws</b></p>
+                    <p class="card-text"><b>Legal limits to define waterway </b></p>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item"><b>Examples:</b></li>
                         <li class="list-group-item">Slow No Wake</li>
@@ -290,7 +290,7 @@
             </div>
             <div class="col">
                 <div class="card text-center">
-                    <img class="card-img-top" src="/assets/buoys/Information.svg" alt="Information Buoy">
+                    <img class="card-img-top" src="/assets/buoys/3.0/Information.svg" alt="Information Buoy">
                     <h5 class="card-header">Information</h5>
                     <p class="card-text"><b>Directions and Information</b></p>
                     <ul class="list-group list-group-flush">
@@ -302,7 +302,7 @@
             </div>
             <div class="col">
                 <div class="card text-center">
-                    <img class="card-img-top" src="/assets/buoys/Keep Out.svg" alt="Keep Out Buoy">
+                    <img class="card-img-top" src="/assets/buoys/3.0/Keep Out.svg" alt="Keep Out Buoy">
                     <h5 class="card-header">Keep Out</h5>
                     <p class="card-text"><b>Do Not Enter</b></p>
                     <ul class="list-group list-group-flush">
@@ -314,7 +314,7 @@
             </div>
             <div class="col">
                 <div class="card text-center">
-                    <img class="card-img-top" src="/assets/buoys/Hazard.svg" alt="Hazard Buoy">
+                    <img class="card-img-top" src="/assets/buoys/3.0/Hazard.svg" alt="Hazard Buoy">
                     <h5 class="card-header">Hazard</h5>
                     <p class="card-text"><b>The marked area requires caution.</b></p>
                     <ul class="list-group list-group-flush">
@@ -389,15 +389,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
-    <script>
-        mapboxgl.accessToken = 'pk.eyJ1Ijoiamt1cnR6d2VpbDIiLCJhIjoiY2thZDluYnBxMjJmdjJ6bXhyOG81Y213eCJ9.MBSKdq0lNlUe2ngXZt4miA';
-        var map = new mapboxgl.Map({
-            container: 'glmap',
-            style: 'mapbox://styles/jkurtzweil2/ck9f3hkwz2ojh1irrd45vhzrp'
-        });
-
-    </script>
 
     <script>
         var d = new Date();
@@ -514,6 +505,8 @@
                 alert = "A Thunderstorm Warning has been issued for the area. Please use extreme caution when out on the water."
             } else if (alert == "Tornado Watch") {
                 alert = "A Tornado Watch has been issued for the area. Please use extreme caution when out on the water."
+            } else if (alert == "Tornado Warning") {
+                alert = "A Tornado Warning has been issued for the area. Please use extreme caution when out on the water."
             } else {
                 alert = alert;
             }

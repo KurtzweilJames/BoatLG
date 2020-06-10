@@ -119,6 +119,10 @@
     border-top: .05rem solid #e5e5e5;
 }
 
+.card-img-top {
+    padding: 10px;
+}
+
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #121212 !important;
