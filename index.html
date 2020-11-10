@@ -514,8 +514,7 @@
                     };
 
                     //Weather Alerts
-
-                    document.getElementById("weatheralert").style.display = "block";
+                    var alert;
 
                     if (hazard.includes("Lightning")) {
                         alert = "Lightning has been detected in the area! Please remain off the lake!";
@@ -527,9 +526,14 @@
                         alert = "A Tornado Watch has been issued for the area. Please use extreme caution when out on the water."
                     } else if (hazard.includes("Tornado Warning")) {
                         alert = "A Tornado Warning has been issued for the area. Please use extreme caution when out on the water."
+                    } else if (hazard.includes("Wind Advisory")) {
+                        alert = "A Wind Advisory has been issued for the area. Please use caution when returning to dock."
                     }
 
-                    document.getElementById("weatheralert").innerHTML = alert;
+                    if (alert !== undefined) {
+                        document.getElementById("weatheralert").style.display = "block";
+                        document.getElementById("weatheralert").innerHTML = alert;
+                    }
                 });
 
         });
