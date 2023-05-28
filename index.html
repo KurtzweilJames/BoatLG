@@ -402,11 +402,11 @@
         var set = set.getHours();
 
         //Holidays
-        if ((date == 28 || date == 29 || date == 30) && m == 4) { // Memorial Day 2022
+        if (m === 4 && ((day === 5 && date >= 28) || (day === 6 && date >= 27) || (day === 0 && date >= 26))) { // Memorial Day
             holiday = "Memorial Day Weekend";
         } else if ((date == 3 || date == 4 || date == 5) && m == 6) { // Independence Day
             holiday = "Independence Day";
-        } else if ((date == 3 || date == 4 || date == 5) && m == 8) { // Labor Day 2022
+        } else if (m === 8 && (day === 6 || day === 0 || day === 1) && (date >= 1 && date <= 7)) { // Labor Day
             holiday = "Labor Day Weekend";
         } else {
             holiday = 0;
